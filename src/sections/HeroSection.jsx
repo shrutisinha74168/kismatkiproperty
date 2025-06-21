@@ -18,9 +18,6 @@ function HeroSection() {
         <h1>
           Property Toh Kismat Se Milti Hai <span className="text-warning">Search Kare</span>
         </h1>
-        <p>
-          With <strong>Kismat Ki Property</strong> — Trusted Real Estate Platform
-        </p>
         <a href="/properties" className="btn btn-light btn-lg mt-3">
           Explore Properties
         </a>

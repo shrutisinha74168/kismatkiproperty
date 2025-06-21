@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ onUserInteract }) {
+  const menuItems = ["Home", "Properties", "About", "Contact", "Events", "Package"];
+
   return (
     <nav
       className="navbar navbar-expand-lg fixed-top bg-white shadow-sm"
@@ -8,7 +10,7 @@ function Navbar() {
     >
       <div className="container py-1">
         {/* Logo */}
-        <NavLink className="navbar-brand d-flex align-items-center" to="/">
+        <NavLink className="navbar-brand d-flex align-items-center" to="/" onClick={onUserInteract}>
           <img
             src="/assets/logo1.png"
             alt="Kismat Ki Property Logo"
@@ -35,45 +37,37 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Menu Items + Buttons */}
-        <div
-          className="collapse navbar-collapse justify-content-between"
-          id="navbarContent"
-        >
-          {/* Center Menu */}
+        {/* Menu Items */}
+        <div className="collapse navbar-collapse justify-content-between" id="navbarContent">
           <ul className="navbar-nav mx-auto gap-4 align-items-center">
-            {["Home", "Properties", "About", "Contact", "Events", "Package"].map(
-              (label) => (
-                <li className="nav-item" key={label}>
-                  <NavLink
-                    to={`/${label.toLowerCase()}`}
-                    className={({ isActive }) =>
-                      `nav-link fw-semibold text-dark ${isActive ? "active" : ""}`
-                    }
-                    style={{ transition: "color 0.2s ease" }}
-                  >
-                    {label}
-                  </NavLink>
-                </li>
-              )
-            )}
+            {menuItems.map((label) => (
+              <li className="nav-item" key={label}>
+                <NavLink
+                  to={`/${label.toLowerCase()}`}
+                  className={({ isActive }) =>
+                    `nav-link fw-semibold text-dark ${isActive ? "active" : ""}`
+                  }
+                  onClick={onUserInteract}
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
 
-          {/* Right Corner Buttons */}
+          {/* Right Buttons */}
           <div className="d-flex gap-2">
             <NavLink
               to="/login"
-              className={({ isActive }) =>
-                `btn btn-primary px-3 py-1 rounded-pill ${isActive ? "active" : ""}`
-              }
+              className="btn btn-primary px-3 py-1 rounded-pill"
+              onClick={onUserInteract}
             >
               Login
             </NavLink>
             <NavLink
               to="/signup"
-              className={({ isActive }) =>
-                `btn btn-success px-3 py-1 rounded-pill ${isActive ? "active" : ""}`
-              }
+              className="btn btn-success px-3 py-1 rounded-pill"
+              onClick={onUserInteract}
             >
               Signup
             </NavLink>
@@ -81,7 +75,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Responsive Style for Logo */}
+      {/* Responsive Logo Style */}
       <style>
         {`
           @media (max-width: 768px) {

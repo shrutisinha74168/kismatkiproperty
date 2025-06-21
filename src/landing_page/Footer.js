@@ -60,10 +60,10 @@ function Footer() {
           <div className="col-md-4">
             <h6 className="fw-bold">Contact Us</h6>
             <p className="small mb-1">Kismat Ki Property Pvt. Ltd.</p>
-            <p className="small mb-1">123 Real Estate Street, JP Nagar, Bangalore, India</p>
-            <p className="small mb-1">Email: support@kismatkiproperty.com</p>
+            <p className="small mb-1">B-1/628, 2nd Floor, Pillar No- 570, Near Dell Showroom, Janakpuri East Metro Station, New Delhi</p>
+            <p className="small mb-1">Email: Property.charukhanna@gmail.com</p>
             <p className="small mb-1">Phone: +91 8595076589</p>
-            <p className="small">Office Hours: Mon - Sat, 10AM to 6PM</p>
+            <p className="small">Office Hours: Mon - Sat, 10AM to 7PM</p>
           </div>
 
           {/* Mobile App & Payment */}
