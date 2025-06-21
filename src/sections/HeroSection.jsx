@@ -16,7 +16,7 @@ function HeroSection() {
       {/* Overlay Content */}
       <div className="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
         <h1>
-          Find Your <span className="text-warning">Dream Property</span>
+          Property Toh Kismat Se Milti Hai <span className="text-warning">Search Kare</span>
         </h1>
         <p>
           With <strong>Kismat Ki Property</strong> — Trusted Real Estate Platform

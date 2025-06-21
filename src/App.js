@@ -3,17 +3,19 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './landing_page/Navbar';
 import HomePage from './HomePage';
 import Footer from './landing_page/Footer';
-import PostPropertyPage from './pages/PostPropertyPage';
 import EventsPage from "./pages/EventsPage";
+import LeadCaptureModal from './sections/LeadCaptureModal';
+import WhatsappWidget from './Components/WhatsappWidget';
 
 function App() {
   return (
     <>
+      <LeadCaptureModal/>
       <Navbar />
-
+      <WhatsappWidget/>
       <Routes>
+        <Route path="/home" element={<HomePage />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/post-property" element={<PostPropertyPage />} />
         <Route path="/events" element={<EventsPage />} />
       </Routes>
 

@@ -6,7 +6,7 @@ const events = [
     title: "Gurgaon Property Expo 2025",
     date: "July 10, 2025",
     location: "DLF CyberHub, Gurgaon",
-    image: "/assets/event1.jpg",
+    image: "/assets/CyberHub.jpg",
     description: "Explore 100+ new projects from top builders with exclusive launch offers.",
   },
   {
@@ -20,7 +20,7 @@ const events = [
     title: "Site Visit: KKP Heights Noida",
     date: "August 18, 2025",
     location: "Sector 150, Noida",
-    image: "/assets/event3.jpg",
+    image: "/assets/Noida1.webp",
     description: "Free pick-up & drop service for interested buyers. Book now!",
   },
 ];

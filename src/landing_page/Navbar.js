@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
@@ -7,13 +6,19 @@ function Navbar() {
       className="navbar navbar-expand-lg fixed-top bg-white shadow-sm"
       style={{ zIndex: 999 }}
     >
-      <div className="container py-2">
+      <div className="container py-1">
         {/* Logo */}
         <NavLink className="navbar-brand d-flex align-items-center" to="/">
           <img
-            src="/assets/logo.png"
+            src="/assets/logo1.png"
             alt="Kismat Ki Property Logo"
-            style={{ height: "45px", objectFit: "contain" }}
+            style={{
+              height: "50px",
+              width: "auto",
+              objectFit: "contain",
+              padding: "2px 12px",
+            }}
+            className="d-inline-block align-top logo-img"
           />
         </NavLink>
 
@@ -30,59 +35,65 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Centered Menu */}
-        <div className="collapse navbar-collapse justify-content-center" id="navbarContent">
-          <ul className="navbar-nav mb-2 mb-lg-0 gap-4 align-items-center">
-            {["Home", "Properties", "About", "Contact", "Events"].map((label) => (
-              <li className="nav-item" key={label}>
-                <NavLink
-                  to={`/${label.toLowerCase()}`}
-                  className="nav-link fw-semibold text-dark"
-                  activeClassName="active"
-                  exact="true"
-                  style={{ transition: "color 0.2s ease" }}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-
-            {/* Account Dropdown */}
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle fw-semibold text-dark"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Account
-              </a>
-              <ul className="dropdown-menu dropdown-menu-end shadow-sm rounded">
-                <li><NavLink to="/login" className="dropdown-item">Login</NavLink></li>
-                <li><NavLink to="/profile" className="dropdown-item">Profile</NavLink></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li><NavLink to="/logout" className="dropdown-item">Logout</NavLink></li>
-              </ul>
-            </li>
-
-            {/* Post Property Button */}
-            <li className="nav-item">
-              <NavLink
-                to="/post-property"
-                className="btn btn-primary px-4 py-2"
-                style={{ borderRadius: "25px", fontWeight: 500 }}
-              >
-                Post Property
-              </NavLink>
-            </li>
+        {/* Menu Items + Buttons */}
+        <div
+          className="collapse navbar-collapse justify-content-between"
+          id="navbarContent"
+        >
+          {/* Center Menu */}
+          <ul className="navbar-nav mx-auto gap-4 align-items-center">
+            {["Home", "Properties", "About", "Contact", "Events", "Package"].map(
+              (label) => (
+                <li className="nav-item" key={label}>
+                  <NavLink
+                    to={`/${label.toLowerCase()}`}
+                    className={({ isActive }) =>
+                      `nav-link fw-semibold text-dark ${isActive ? "active" : ""}`
+                    }
+                    style={{ transition: "color 0.2s ease" }}
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              )
+            )}
           </ul>
+
+          {/* Right Corner Buttons */}
+          <div className="d-flex gap-2">
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                `btn btn-primary px-3 py-1 rounded-pill ${isActive ? "active" : ""}`
+              }
+            >
+              Login
+            </NavLink>
+            <NavLink
+              to="/signup"
+              className={({ isActive }) =>
+                `btn btn-success px-3 py-1 rounded-pill ${isActive ? "active" : ""}`
+              }
+            >
+              Signup
+            </NavLink>
+          </div>
         </div>
       </div>
+
+      {/* Responsive Style for Logo */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .logo-img {
+              height: 55px !important;
+              padding: 2px 8px !important;
+            }
+          }
+        `}
+      </style>
     </nav>
   );
 }
 
 export default Navbar;
-
-            

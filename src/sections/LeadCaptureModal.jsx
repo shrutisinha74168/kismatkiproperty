@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-const LeadCaptureModal = () => {
+  const LeadCaptureModal = () => {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [show, setShow] = useState(true);
 
-  useEffect(() => {
+ useEffect(() => {
   const savedUser = localStorage.getItem("leadUser");
- if (savedUser) setShow(false);
-  }, []);
+  if (savedUser) setShow(false);
+ }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const LeadCaptureModal = () => {
   return (
     <div style={styles.overlay}>
       <div style={styles.modal}>
-        <h3 style={styles.heading}>Welcome! 👋</h3>
+        <h3 style={styles.heading}>Welcome! 👋 To Kismat Ki Property</h3>
         <p style={styles.subtext}>Please enter your details to continue</p>
         <form onSubmit={handleSubmit}>
           <input

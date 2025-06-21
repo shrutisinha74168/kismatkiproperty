@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const TestiMonials = [
+const testimonials = [
   {
     name: "Ranganath RK",
     location: "Owner, Bangalore",
@@ -14,34 +14,46 @@ const TestiMonials = [
     feedback:
       "Our experience has been very fruitful. We got a lot of enquiries and good conversions. Very happy as it helped us reach a diversified audience.",
   },
+  {
+    name: "Priya Sharma",
+    location: "Tenant, Mumbai",
+    feedback:
+      "Smooth experience from start to finish. Found the perfect home in just 3 days!",
+  },
 ];
 
-function Testimonials () {
+function Testimonials() {
+  const [index, setIndex] = useState(0);
+
+  const next = () => {
+    setIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prev = () => {
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const current = testimonials[index];
+
   return (
     <section className="py-5 bg-light">
-      <div className="container">
+      <div className="container text-center">
         <h5 className="text-primary text-uppercase mb-2">Testimonial</h5>
         <h2 className="fw-bold mb-4">
           This is what other Owners & Dealers have to say…
         </h2>
 
-        <div className="row">
-          {TestiMonials.map((item, index) => (
-            <div className="col-md-6 mb-4" key={index}>
-              <div className="p-4 bg-white shadow-sm rounded">
-                <h5 className="fw-bold">{item.name}</h5>
-                <p className="text-muted mb-2">{item.location}</p>
-                <p style={{ fontSize: "15px" }}>{item.feedback}</p>
-              </div>
-            </div>
-          ))}
+        <div className="p-4 bg-white shadow-sm rounded d-inline-block text-start" style={{ maxWidth: "600px" }}>
+          <h5 className="fw-bold">{current.name}</h5>
+          <p className="text-muted mb-2">{current.location}</p>
+          <p style={{ fontSize: "15px" }}>{current.feedback}</p>
         </div>
 
-        <div className="d-flex justify-content-between mt-3 px-2">
-          <button className="btn btn-outline-primary rounded-circle">
+        <div className="d-flex justify-content-center gap-3 mt-4">
+          <button onClick={prev} className="btn btn-outline-primary rounded-circle">
             <FaArrowLeft />
           </button>
-          <button className="btn btn-outline-primary rounded-circle">
+          <button onClick={next} className="btn btn-outline-primary rounded-circle">
             <FaArrowRight />
           </button>
         </div>
@@ -50,5 +62,4 @@ function Testimonials () {
   );
 }
 
-// ✅ yeh line correct export hai
 export default Testimonials;

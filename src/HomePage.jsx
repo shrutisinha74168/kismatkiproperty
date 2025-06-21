@@ -4,7 +4,6 @@ import SearchFilter from './sections/SearchFilter';
 import FeaturedProperties from './sections/FeaturedProperties';
 import PopularCities from './sections/PopularCities';
 import Testimonials from "./sections/TestiMonials";
-import LeadCaptureModal from './sections/LeadCaptureModal';
 import WhyChooseUs from './sections/WhyChooseUs';
 import SellProperty from './sections/SellProperty';
 import FaqAndBlog from './sections/FaqAndBlog';
@@ -17,7 +16,6 @@ function HomePage() {
       <FeaturedProperties />
       <PopularCities />
       <Testimonials />
-      <LeadCaptureModal/>
       <WhyChooseUs/>
       <SellProperty/>
       <FaqAndBlog/>

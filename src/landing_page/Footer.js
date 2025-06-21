@@ -8,7 +8,7 @@ function Footer() {
           {/* Logo and social */}
           <div className="col-md-4">
             <img
-              src="/assets/logo.png"
+              src="/assets/logo1.png"
               alt="Logo"
               style={{ width: "150px", marginBottom: "15px" }}
             />
@@ -62,7 +62,7 @@ function Footer() {
             <p className="small mb-1">Kismat Ki Property Pvt. Ltd.</p>
             <p className="small mb-1">123 Real Estate Street, JP Nagar, Bangalore, India</p>
             <p className="small mb-1">Email: support@kismatkiproperty.com</p>
-            <p className="small mb-1">Phone: +91 98765 43210</p>
+            <p className="small mb-1">Phone: +91 8595076589</p>
             <p className="small">Office Hours: Mon - Sat, 10AM to 6PM</p>
           </div>
 
